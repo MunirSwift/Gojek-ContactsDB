@@ -41,7 +41,7 @@ func createBody(url: String, params:[String: AnyObject], data:Data) throws -> UR
         let mimetype = "image/png"
 
         body.append("--\(boundary)\r\n")
-        body.append("Content-Disposition: form-data; name=\"\(filePathKey)\"; filename=\"\(filename)\"\r\n")
+        body.append("Content-Disposition: form-data; name=\"profile_pic\"; filename=\"\(filename)\"\r\n")
         body.append("Content-Type: \(mimetype)\r\n\r\n")
         body.append(data)
         body.append("\r\n")
