@@ -22,7 +22,7 @@ task.resume()
         
         
 //  MARK: - Create Body        
-func createBody(url: String, params:[String: AnyObject], data:Data) throws -> URLRequest {
+func createBody(url: String, params:[String: AnyObject], data:Data) throws -> Data {
 
     let boundary = generateBoundaryString()
     var body = Data()
