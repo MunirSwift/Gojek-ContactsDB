@@ -16,7 +16,7 @@ let boundary = generateBoundaryString()
 
 request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
-let body = createBody(url: "https://gojek-contacts-app.herokuapp.com/contacts.json", params:params, data:Data)
+let body = createBody(url: "https://gojek-contacts-app.herokuapp.com/contacts.json", params:params, data:data)
 
 request.httpMethod = "POST"
 
