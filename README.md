@@ -8,7 +8,7 @@ Sample code to upload image with data
 
 let params = ["first_name": "munir", "last_name":"abbas", "email":"m7unity@gmail.com", "phone_number":"00923112824994"]
 
-let data = UIImage(name:"splash").pngImage()
+let data = UIImage(name:"splash").pngData()
 
 var request = URLRequest(url: URL.init(string: url)!)
 
