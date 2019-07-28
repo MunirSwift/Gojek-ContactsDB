@@ -7,17 +7,27 @@ Here is my code to upload file. (even the code which work on my php script can b
 Sample code to upload image with data
 
 let params = ["first_name": "munir", "last_name":"abbas", "email":"m7unity@gmail.com", "phone_number":"00923112824994"]
+
 let data = UIImage(name:"splash").pngImage()
 
 var request = URLRequest(url: URL.init(string: url)!)
+
 let boundary = generateBoundaryString()
+
 request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
 let body = createBody(url: "https://gojek-contacts-app.herokuapp.com/contacts.json", params:params, data:Data)
+
 request.httpMethod = "POST"
+
 request.httpBody = body
+
 let task = URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) -> Void in
+
     completion(data!)
+
 }
+
 task.resume()
         
         
@@ -56,5 +66,7 @@ func createBody(url: String, params:[String: AnyObject], data:Data) throws -> Da
 /// - returns:            The boundary string that consists of "Boundary-" followed by a UUID string.
 
 private func generateBoundaryString() -> String {
+
     return "Boundary-\(UUID().uuidString)"
+
 }
