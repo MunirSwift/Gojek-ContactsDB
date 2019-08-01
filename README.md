@@ -45,17 +45,17 @@ func createBody(url: String, params:[String: AnyObject], data:Data) throws -> Da
         }
     }
 
-    for path in paths {
+    //  add image data stuff here...
     
-        let filename = "profile_pic"
-        let mimetype = "image/png"
+    let filename = "profile_pic"
+    let mimetype = "image/png"
 
-        body.append("--\(boundary)\r\n")
-        body.append("Content-Disposition: form-data; name=\"profile_pic\"; filename=\"\(filename)\"\r\n")
-        body.append("Content-Type: \(mimetype)\r\n\r\n")
-        body.append(data)
-        body.append("\r\n")
-    }
+    body.append("--\(boundary)\r\n")
+    body.append("Content-Disposition: form-data; name=\"profile_pic\"; filename=\"\(filename)\"\r\n")
+    body.append("Content-Type: \(mimetype)\r\n\r\n")
+    body.append(data)
+    body.append("\r\n")
+ 
 
     body.append("--\(boundary)--\r\n")
     return body
